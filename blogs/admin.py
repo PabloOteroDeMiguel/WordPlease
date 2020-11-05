@@ -1,3 +1,8 @@
 from django.contrib import admin
 
-# Register your models here.
+from Posts.models import Post
+from blogs.models import Category, Blogger
+
+admin.site.register(Category)
+admin.site.register(Blogger)
+admin.site.register(Post)
