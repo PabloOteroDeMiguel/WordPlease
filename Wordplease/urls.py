@@ -16,9 +16,10 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path
 
-from Posts.views import home
+from Posts.views import home, post_detail
 
 urlpatterns = [
     path('admin/', admin.site.urls),
+    path('post/<int:pk>', post_detail, name="post_detail_page"),
     path('', home, name="home_page")
 ]
