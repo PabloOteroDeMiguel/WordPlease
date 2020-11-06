@@ -1,6 +1,6 @@
 from django.contrib import admin
 
-from src.Posts.models import Post
+from posts.models import Post
 from blogs.models import Category, Blogger
 
 admin.site.register(Category)

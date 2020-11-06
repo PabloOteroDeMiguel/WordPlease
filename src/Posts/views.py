@@ -1,12 +1,12 @@
 from django.shortcuts import render
 
-from src.Posts.models import Post
+from posts.models import Post
 
 
 def home(request):
-     latest_posts = Post.objects.all().order_by("-created_at")
-     context = {'Posts': latest_posts}
-     return render(request, "home.html", context)
+    latest_posts = Post.objects.all().order_by("-created_at")
+    context = {'Posts': latest_posts}
+    return render(request, "home.html", context)
 
 def post_detail(request, pk):
     possible_post = Post.objects.filter(pk=pk).select_related("category")
